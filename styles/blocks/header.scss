@@ -1,17 +1,13 @@
 @use "../media" as *;
 
 .header {
-  padding-top: 20px;
+  padding-block: 20px;
   background-color: var(--color-light-bg-page);
 
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    @include tablet {
-      padding-inline: calc(var(--container-padding-x) / 2);
-    }
   }
 
   &__menu {
