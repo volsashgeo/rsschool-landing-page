@@ -1,0 +1,43 @@
+@use "normalize";
+@use "fonts";
+@use "mixins";
+@use "media";
+@use "variables";
+@use "utils";
+@use "globals";
+@use "./blocks/button.scss";
+@use "./blocks/burger-button.scss";
+@use "./blocks/header.scss";
+@use "./blocks/mobile-overlay.scss";
+@use "./blocks/hero.scss";
+@use "./blocks/slider.scss";
+@use "./blocks/about.scss";
+@use "./blocks/footer.scss";
+
+// :root {
+//   --bg-cream: #efe6dd;
+//   --bg-hero: #2a1d17;
+//   --bg-footer: #2b2320;
+//   --text-dark: #403f3d;
+//   --text-light: #e1d4c9;
+//   --accent: #b0907a;
+// }
+
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   color: var(--text-dark);
+// }
+
+// body {
+//   font-family: "Inter", Arial, sans-serif;
+//   background: var(--color-bg);
+//   line-height: 1.5;
+// }
+
+// .container {
+//   max-width: 1440px;
+//   margin: 0 auto;
+//   padding: 0 40px;
+// }

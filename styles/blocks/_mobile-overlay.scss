@@ -1,0 +1,103 @@
+@use "../mixins" as *;
+@use "../media" as *;
+
+.mobile-overlay {
+  padding: 0;
+  padding-top: 20px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: var(--color-light-bg-page);
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 72px;
+
+    @include hover {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      translate: -50%;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition-duration: inherit;
+    }
+  }
+
+  &:modal {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__close-button {
+    position: absolute;
+    right: 40px;
+    top: 29px;
+    padding: 15px;
+    border: none;
+    background-color: inherit;
+
+    @include tablet {
+      right: 20px;
+    }
+  }
+
+  &__body {
+    @include flex-center;
+    min-height: 90%;
+  }
+
+  &__list {
+    @include flex-center;
+
+    flex-direction: column;
+    row-gap: 60px;
+    font-size: 32px;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    column-gap: 8px;
+    padding-top: 40px;
+    font-size: 32px;
+    background: transparent;
+    border: none;
+    color: inherit;
+
+    @include hover {
+      &::after {
+        width: 85%;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 110%;
+      left: 47%;
+      translate: -50%;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition-duration: inherit;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
