@@ -1,0 +1,111 @@
+@use "../media" as *;
+
+.header {
+  padding-top: 20px;
+  background-color: var(--color-light-bg-page);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+      padding-inline: calc(var(--container-padding-x) / 2);
+    }
+  }
+
+  &__menu {
+    font-size: 16px;
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
+
+      @include desktop {
+        column-gap: 12px;
+      }
+    }
+
+    &-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      height: 48px;
+
+      @include hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        translate: -50%;
+        width: 0;
+        height: 2px;
+        background-color: currentColor;
+        transition-duration: inherit;
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 24px;
+
+    @include desktop {
+      column-gap: 8px;
+    }
+  }
+
+  &__theme-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-light-border-primary);
+    padding: 4px;
+    border-radius: var(--border-radius-large);
+
+    &__btn {
+      background: inherit;
+      border: none;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    column-gap: 8px;
+    height: 28px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    color: inherit;
+
+    @include hover {
+      &::after {
+        width: 85%;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      translate: -50%;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition-duration: inherit;
+    }
+  }
+}
