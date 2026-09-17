@@ -511,7 +511,7 @@ ul {
   }
 }
 .container .hero {
-  background-image: url(../../images/img-hero.svg);
+  background-image: url(../images/img-hero.svg);
   background-color: var(--color-dark-bg-container);
   background-repeat: no-repeat;
   background-position: center;
