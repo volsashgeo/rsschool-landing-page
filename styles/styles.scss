@@ -14,8 +14,3 @@
 @use "./blocks/about.scss";
 @use "./blocks/app.scss";
 @use "./blocks/footer.scss";
-
-.word-accent {
-  color: var(--color-dark-text-accent);
-  font-size: inherit;
-}

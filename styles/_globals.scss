@@ -44,12 +44,7 @@ ul {
   list-style: none;
 }
 
-// h3,
-// .h3 {
-//   @include fluid-text(30, 26);
-// }
-
-// h4,
-// .h4 {
-//   @include fluid-text(20, 18);
-// }
+.word-accent {
+  color: var(--color-dark-text-accent);
+  font-size: inherit;
+}
