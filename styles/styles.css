@@ -709,6 +709,11 @@ ul {
   max-width: 1440px;
   padding-top: 100px;
 }
+@media (width < 381px) {
+  .about {
+    padding-inline: 16px;
+  }
+}
 .about__text {
   font-weight: 600;
   font-size: 60px;
@@ -732,6 +737,7 @@ ul {
   gap: 40px;
   margin: 0 auto;
   width: 100%;
+  height: 1060px;
   grid-template-areas: "girl man" "girl couple" "cups couple";
 }
 .about__gallery-item {
@@ -743,6 +749,11 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+@media (width < 769px) {
+  .about__gallery-item img {
+    width: 688px;
+  }
 }
 .about__gallery .item-girl {
   grid-area: girl;
@@ -762,7 +773,124 @@ ul {
     grid-template-rows: 1fr 1fr;
     gap: 0;
     row-gap: 40px;
+    height: 1220px;
   }
+}
+
+.app {
+  padding-top: 100px;
+}
+.app__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: 1fr;
+  column-gap: 100px;
+  margin: 0 auto;
+  width: 100%;
+  height: 630px;
+  grid-template-areas: "info phones";
+}
+@media (width < 1070px) {
+  .app__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 342px 630px;
+    gap: 100px 0;
+    gap: 40px 0;
+    height: 1000px;
+    grid-template-areas: "info" "phones";
+  }
+}
+@media (width < 550px) {
+  .app__grid {
+    height: 768px;
+  }
+}
+.app__info {
+  grid-area: info;
+  align-self: center;
+}
+.app__phones {
+  grid-area: phones;
+  max-width: 100%;
+  height: 348px;
+}
+@media (width < 550px) {
+  .app__phones img {
+    width: 348px;
+    height: 348px;
+  }
+}
+.app__title {
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 125%;
+  padding-bottom: 40px;
+}
+@media (width < 550px) {
+  .app__title {
+    font-size: 32px;
+  }
+}
+.app__desc {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  padding-bottom: 40px;
+}
+.app__buttons {
+  display: flex;
+  gap: 20px;
+}
+@media (width < 550px) {
+  .app__buttons {
+    flex-direction: column;
+  }
+}
+.app__btn {
+  justify-content: start;
+  padding-left: 20px;
+  width: 200px;
+  height: 64px;
+  font-size: 16px;
+  color: var(--color-light-text-primary);
+  background-color: var(--color-dark-text-primary);
+  border: 1px solid var(--color-light-border-primary);
+  gap: 8px;
+}
+@media (hover: hover) {
+  .app__btn:hover {
+    color: var(--color-light-text-inverse);
+    background-color: var(--color-light-bg-container);
+  }
+}
+@media (hover: none) {
+  .app__btn:active {
+    color: var(--color-light-text-inverse);
+    background-color: var(--color-light-bg-container);
+  }
+}
+.app__image {
+  padding: 0;
+  color: inherit;
+}
+.app__image img {
+  background-color: inherit;
+}
+.app__button-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.app__available {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 140%;
+}
+.app__store {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
 }
 
 .word-accent {
