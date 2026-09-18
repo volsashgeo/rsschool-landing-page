@@ -1,121 +1,119 @@
 @use "../mixins" as *;
 
-.container {
-  padding-top: 100px;
+.slider {
+    padding-top: 100px;
 
-  .slider {
-    &__inner {
-      @include flex-center;
-      flex-direction: column;
-      min-height: 696px;
-    }
+  &__inner {
+    @include flex-center;
+    flex-direction: column;
+    min-height: 696px;
+  }
 
-    &__title {
-      text-align: center;
-      font-size: 60px;
-      font-weight: 600;
+  &__title {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+
+    @media (width < 550px) {
+      font-size: 32px;
       line-height: 125%;
+    }
+  }
 
+  &__wrapper {
+    width: 100%;
+    @include flex-center;
+    justify-content: space-between;
+
+    @media (width < 768px) {
+      justify-content: center;
+    }
+  }
+
+  &__card {
+    @include flex-center;
+    flex-direction: column;
+    margin-top: 40px;
+
+    &-image {
       @media (width < 550px) {
-        font-size: 32px;
-        line-height: 125%;
+        width: 348px;
+        height: 348px;
       }
     }
+  }
 
-    &__wrapper {
-      width: 100%;
-      @include flex-center;
-      justify-content: space-between;
+  &__info {
+    @include flex-center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 140px;
 
-      @media (width < 768px) {
-        justify-content: center;
-      }
+    &-name {
+      font-weight: 600;
+      font-size: 24px;
+    }
+    &-desc {
+      max-width: 480px;
+      font-weight: 400;
+      font-size: 16px;
+      text-align: center;
+    }
+    &-price {
+      font-weight: 600;
+      font-size: 24px;
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--color-light-border-inverse);
+    border-radius: 100px;
+    background-color: transparent;
+
+    img {
+      @include abs-center;
     }
 
-    &__card {
-      @include flex-center;
-      flex-direction: column;
-      margin-top: 40px;
-
-      &-image {
-        @media (width < 550px) {
-          width: 348px;
-          height: 348px;
-        }
-      }
+    @media (width < 768px) {
+      display: none;
     }
+  }
 
-    &__info {
-      @include flex-center;
-      flex-direction: column;
-      justify-content: space-between;
-      margin-top: 20px;
-      height: 140px;
+  &__pagination {
+    @include flex-center;
 
-      &-name {
-        font-weight: 600;
-        font-size: 24px;
-      }
-      &-desc {
-        max-width: 480px;
-        font-weight: 400;
-        font-size: 16px;
-        text-align: center;
-      }
-      &-price {
-        font-weight: 600;
-        font-size: 24px;
-      }
+    gap: 12px;
+    background-color: #e3dcd2;
+    max-width: 144px;
+    height: 4px;
+    margin-top: 40px;
+  }
+
+  &__bullet {
+    position: relative;
+    //   padding-top: 20px;
+    width: 40px;
+    height: 4px;
+    background-color: var(--color-light-border-primary);
+    border-radius: 100px;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      bottom: -15px;
+      left: -15px;
+      right: -15px;
     }
+  }
 
-    &__arrow {
-      position: relative;
-      width: 60px;
-      height: 60px;
-      border: 1px solid var(--color-light-border-inverse);
-      border-radius: 100px;
-      background-color: transparent;
-
-      img {
-        @include abs-center;
-      }
-
-      @media (width < 768px) {
-        display: none;
-      }
-    }
-
-    &__pagination {
-      @include flex-center;
-
-      gap: 12px;
-      background-color: #e3dcd2;
-      max-width: 144px;
-      height: 4px;
-      margin-top: 40px;
-    }
-
-    &__bullet {
-      position: relative;
-      //   padding-top: 20px;
-      width: 40px;
-      height: 4px;
-      background-color: var(--color-light-border-primary);
-      border-radius: 100px;
-      cursor: pointer;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: -15px;
-        bottom: -15px;
-        left: -15px;
-        right: -15px;
-      }
-    }
-
-    &__bullet_active {
-      background-color: var(--color-light-border-inverse);
-    }
+  &__bullet_active {
+    background-color: var(--color-light-border-inverse);
   }
 }
