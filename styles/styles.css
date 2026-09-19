@@ -448,9 +448,14 @@ ul {
   border: none;
   background-color: inherit;
 }
-@media (max-width: 769px) {
+@media (width < 644px) {
   .mobile-overlay__close-button {
-    right: 20px;
+    right: 25px;
+  }
+}
+@media (width < 381px) {
+  .mobile-overlay__close-button {
+    right: 17px;
   }
 }
 .mobile-overlay__body {
