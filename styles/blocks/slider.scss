@@ -1,7 +1,8 @@
 @use "../mixins" as *;
+@use "../media" as *;
 
 .slider {
-    padding-top: 100px;
+  padding-top: 100px;
 
   &__inner {
     @include flex-center;
@@ -75,8 +76,17 @@
     border-radius: 100px;
     background-color: transparent;
 
-    img {
+    &-left,
+    &-right {
       @include abs-center;
+
+      @include hover {
+        color: var(--color-dark-text-inverse);
+      }
+    }
+
+    @include hover {
+      background-color: var(--color-light-bg-container);
     }
 
     @media (width < 768px) {

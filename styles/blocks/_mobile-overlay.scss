@@ -52,12 +52,10 @@
 
     @media (width < 644px) {
       right: 25px;
-
     }
 
-       @media (width < 381px) {
+    @media (width < 381px) {
       right: 17px;
-
     }
   }
 
@@ -72,6 +70,12 @@
     flex-direction: column;
     row-gap: 60px;
     font-size: 32px;
+  }
+
+  &__item {
+    .overlay__button {
+      font-size: 32px;
+    }
   }
 
   &__button {

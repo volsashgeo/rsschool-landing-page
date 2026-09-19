@@ -1,4 +1,5 @@
 @use "../utils" as *;
+@use "../media" as *;
 
 .container {
   @media (width <= 644px) {
@@ -57,7 +58,7 @@
       font-size: 72px;
       line-height: 105%;
 
-      @media (width <= 644px) {
+      @media (width <= 700px) {
         font-size: 42px;
         line-height: 115%;
       }
@@ -81,6 +82,16 @@
       background-color: var(--color-dark-text-primary);
       border: none;
       gap: 8px;
+
+      .visible-hover {
+        display: none;
+      }
+
+      @include hover {
+        .visible-hover {
+          display: inline-block;
+        }
+      }
     }
   }
 }
