@@ -48,7 +48,16 @@
     background-color: inherit;
 
     @include tablet {
-      right: 20px;
+    }
+
+    @media (width < 644px) {
+      right: 25px;
+
+    }
+
+       @media (width < 381px) {
+      right: 17px;
+
     }
   }
 
