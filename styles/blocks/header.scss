@@ -19,7 +19,7 @@
       align-items: center;
       column-gap: 40px;
 
-      @include desktop {
+      @media (width < 877px) {
         column-gap: 12px;
       }
     }
