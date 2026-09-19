@@ -99,6 +99,11 @@
     @include flex-center;
     color: var(--color-light-border-primary);
 
+    a {
+      width: 24px;
+      height: 24px;
+    }
+
     @include hover {
       color: var(--color-light-border-inverse);
       background-color: var(--color-light-bg-page);

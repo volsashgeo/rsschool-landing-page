@@ -1076,6 +1076,10 @@ ul {
   align-items: center;
   color: var(--color-light-border-primary);
 }
+.footer__socials-item a {
+  width: 24px;
+  height: 24px;
+}
 @media (hover: hover) {
   .footer__socials-item:hover {
     color: var(--color-light-border-inverse);
