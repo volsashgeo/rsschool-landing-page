@@ -85,7 +85,7 @@ svg * {
 
 @font-face {
     font-family: "Inter";
-    src: url("../fonts/Inter18pt-Regular.woff2") format("woff2");
+    src: url("./fonts/Inter18pt-Regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -93,7 +93,7 @@ svg * {
 
 @font-face {
     font-family: "Inter";
-    src: url("../fonts/Inter18pt-SemiBold.woff2") format("woff2");
+    src: url("./fonts/Inter18pt-SemiBold.woff2") format("woff2");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -101,7 +101,7 @@ svg * {
 
 @font-face {
     font-family: "Inter";
-    src: url("../fonts/Inter18pt-SemiBoldItalic.woff2") format("woff2");
+    src: url("./fonts/Inter18pt-SemiBoldItalic.woff2") format("woff2");
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -628,7 +628,7 @@ html[data-theme="dark"] .logo__img--dark {
 }
 
 .container .hero {
-    background-image: url(../../images/img-hero.svg);
+    background-image: url(./images/img-hero.svg);
     background-color: var(--color-dark-bg-container);
     background-repeat: no-repeat;
     background-position: center;
