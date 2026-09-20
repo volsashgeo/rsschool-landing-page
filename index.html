@@ -451,61 +451,7 @@
             </div>
         </dialog>
     </div>
-
-
-    <script>
-        (function () {
-            const STORAGE_KEY = 'coffee-house-theme';
-            const html = document.documentElement;
-
-            /**
-             * Применить тему: обновляет data-theme, состояние кнопок и aria
-             */
-            function applyTheme(theme) {
-                html.setAttribute('data-theme', theme);
-
-                document.querySelectorAll('[data-theme-btn]').forEach((btn) => {
-                    const isActive = btn.dataset.themeBtn === theme;
-                    btn.classList.toggle('is-active', isActive);
-                    btn.setAttribute('aria-pressed', String(isActive));
-                });
-            }
-
-            /**
-             * Инициализация темы при загрузке
-             * Приоритет: localStorage → prefers-color-scheme → light
-             */
-            function initTheme() {
-                const saved = localStorage.getItem(STORAGE_KEY);
-                if (saved === 'light' || saved === 'dark') {
-                    applyTheme(saved);
-                    return;
-                }
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                applyTheme(prefersDark ? 'dark' : 'light');
-            }
-
-            // Применяем тему сразу (до DOMContentLoaded, чтобы избежать "вспышки")
-            initTheme();
-
-            // Делегирование клика по кнопкам темы
-            document.addEventListener('click', (e) => {
-                const btn = e.target.closest('[data-theme-btn]');
-                if (!btn) return;
-
-                const theme = btn.dataset.themeBtn;
-                applyTheme(theme);
-                localStorage.setItem(STORAGE_KEY, theme);
-            });
-
-            // Реакция на смену системной темы (если пользователь не выбирал вручную)
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-                if (!localStorage.getItem(STORAGE_KEY)) {
-                    applyTheme(e.matches ? 'dark' : 'light');
-                }
-            });
-        })();
-    </script>
+    <script src="./theme-toggle.js"></script>
 </body>
 
 </html>

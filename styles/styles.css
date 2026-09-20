@@ -1,8 +1,3 @@
-@charset "UTF-8";
-
-/* ============================================================
-   НОРМАЛИЗАЦИЯ
-   ============================================================ */
 *,
 *::before,
 *::after {
@@ -88,9 +83,6 @@ svg * {
     }
 }
 
-/* ============================================================
-   ШРИФТЫ
-   ============================================================ */
 @font-face {
     font-family: "Inter";
     src: url("../fonts/Inter18pt-Regular.woff2") format("woff2");
@@ -115,9 +107,6 @@ svg * {
     font-display: swap;
 }
 
-/* ============================================================
-   ПЕРЕМЕННЫЕ — СВЕТЛАЯ ТЕМА (по умолчанию)
-   ============================================================ */
 :root {
     --color-light-text-primary: #403f3d;
     --color-light-text-inverse: #e1d4c9;
@@ -137,8 +126,6 @@ svg * {
     --color-dark-border-primary: #665f55;
     --color-dark-border-inverse: #c1b6ad;
 
-    /* --color-bg: #B6AEA7; */
-
     --font-family-base: "Inter", sans-serif;
     --border-radius: 40px;
     --border-radius-small: 20px;
@@ -150,9 +137,6 @@ svg * {
     --transition-duration: 0.2s;
 }
 
-/* ============================================================
-   ПЕРЕМЕННЫЕ — ТЁМНАЯ ТЕМА
-   ============================================================ */
 html[data-theme="dark"] {
     --color-light-text-primary: #e1d4c9;
     --color-light-text-inverse: #403f3d;
@@ -174,9 +158,6 @@ html[data-theme="dark"] {
 
 }
 
-/* ============================================================
-   БАЗОВЫЕ СТИЛИ
-   ============================================================ */
 html {
     scroll-behavior: smooth;
 }
@@ -291,9 +272,6 @@ ul {
     }
 }
 
-/* ============================================================
-   ХЕДЕР
-   ============================================================ */
 .header {
     padding-block: 20px;
     background-color: var(--color-bg);
@@ -366,7 +344,6 @@ ul {
     }
 }
 
-/* --- Переключатель темы --- */
 .header__theme-toggle {
     display: flex;
     justify-content: center;
@@ -441,13 +418,11 @@ html[data-theme="dark"] .logo__img--dark {
     color: #e1d4c9;
 }
 
-/* Неактивная кнопка — прозрачный фон */
 .header__theme-toggle__btn:not(.is-active) .header__theme-toggle__light,
 .header__theme-toggle__btn:not(.is-active) .header__theme-toggle__dark {
     background-color: transparent;
 }
 
-/* Ховер на неактивной кнопке */
 @media (hover: hover) {
 
     .header__theme-toggle__btn:not(.is-active):hover .header__theme-toggle__light,
@@ -466,7 +441,6 @@ html[data-theme="dark"] .logo__img--dark {
     }
 }
 
-/* Кнопка "Menu" в хедере */
 .header__button {
     display: inline-flex;
     align-items: center;
@@ -512,7 +486,6 @@ html[data-theme="dark"] .logo__img--dark {
     transition-duration: inherit;
 }
 
-/* Бургер */
 .burger-button {
     padding: 0;
     background-color: transparent;
@@ -527,12 +500,8 @@ html[data-theme="dark"] .logo__img--dark {
 
 .burger-button {
     position: relative;
-    /* left: 12px; */
 }
 
-/* ============================================================
-   МОБИЛЬНОЕ ОВЕРЛЕЙ-МЕНЮ
-   ============================================================ */
 .mobile-overlay {
     padding: 0;
     padding-top: 20px;
@@ -658,9 +627,6 @@ html[data-theme="dark"] .logo__img--dark {
     height: 40px;
 }
 
-/* ============================================================
-   HERO
-   ============================================================ */
 .container .hero {
     background-image: url(../../images/img-hero.svg);
     background-color: var(--color-dark-bg-container);
@@ -762,9 +728,6 @@ html[data-theme="dark"] .logo__img--dark {
     }
 }
 
-/* ============================================================
-   СЛАЙДЕР
-   ============================================================ */
 .slider {
     padding-top: 100px;
 }
@@ -920,9 +883,6 @@ html[data-theme="dark"] .logo__img--dark {
     background-color: var(--color-light-border-inverse);
 }
 
-/* ============================================================
-   О НАС
-   ============================================================ */
 .about {
     width: 100%;
     max-width: 1440px;
@@ -1023,9 +983,6 @@ html[data-theme="dark"] .logo__img--dark {
     }
 }
 
-/* ============================================================
-   ПРИЛОЖЕНИЕ
-   ============================================================ */
 .app {
     padding-top: 100px;
 }
@@ -1162,9 +1119,6 @@ html[data-theme="dark"] .logo__img--dark {
     line-height: 150%;
 }
 
-/* ============================================================
-   ФУТЕР
-   ============================================================ */
 .footer {
     padding-top: 100px;
     padding-bottom: 40px;
@@ -1317,9 +1271,6 @@ html[data-theme="dark"] .logo__img--dark {
     text-decoration: underline;
 }
 
-/* ============================================================
-   КАТАЛОГ КОФЕ
-   ============================================================ */
 .catalog-coffee__nav {
     display: flex;
     flex-direction: column;
@@ -1413,9 +1364,6 @@ html[data-theme="dark"] .logo__img--dark {
     gap: 40px 30px;
 }
 
-/* ============================================================
-   КАРТОЧКА ТОВАРА
-   ============================================================ */
 .product-card {
     display: flex;
     flex-direction: column;
