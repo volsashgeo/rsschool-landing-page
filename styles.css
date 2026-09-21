@@ -710,6 +710,11 @@ html[data-theme="dark"] .logo__img--dark {
     border: none;
     gap: 8px;
     cursor: pointer;
+    position: relative;
+}
+
+.hero__btn-title {
+    position: absolute;
 }
 
 .container .hero__btn .visible-hover {
@@ -720,11 +725,19 @@ html[data-theme="dark"] .logo__img--dark {
     .container .hero__btn:hover .visible-hover {
         display: inline-block;
     }
+
+    .hero__btn:hover .hero__btn-title {
+        position: static;
+    }
 }
 
 @media (hover: none) {
     .container .hero__btn:active .visible-hover {
         display: inline-block;
+    }
+
+    .hero__btn:hover .hero__btn-title {
+        position: static;
     }
 }
 
