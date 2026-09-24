@@ -1552,19 +1552,9 @@ html[data-theme="dark"] .hero__btn-icon-img--dark {
 
 }
 
-@media (width > 768px) {
+@media (width > 769px) {
     .refresh-button {
         display: none;
-    }
-}
-
-@media (width < 769px) {
-    .product-card:nth-child(n+5) {
-        display: none;
-    }
-
-    .refresh-button {
-        display: block;
     }
 }
 

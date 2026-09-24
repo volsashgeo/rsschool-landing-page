@@ -90,8 +90,8 @@
             </div>
 
         </header>
+        <!-- КАТАЛОГ -->
         <main>
-            <!-- КАТАЛОГ -->
             <section class="catalog-coffee">
                 <div class="catalog-coffee__nav">
                     <h1 class="catalog-coffee__title">
@@ -99,140 +99,30 @@
                     </h1>
 
                     <div class="catalog-coffee__filters">
-                        <button class="catalog-coffee__filter-btn catalog-coffee__filter-btn--active" type="button">
+                        <button class="catalog-coffee__filter-btn catalog-coffee__filter-btn--active" type="button"
+                            data-category="coffee">
                             <span class="catalog-coffee__filter-icon">
                                 <img src="./images/catalog-coffee-icon-1.png" alt="coffee icon">
                             </span> Coffee
                         </button>
-                        <button class="catalog-coffee__filter-btn" type="button">
+                        <button class="catalog-coffee__filter-btn" type="button" data-category="tea">
                             <span class="catalog-coffee__filter-icon">
                                 <img src="./images/catalog-coffee-icon-2.png" alt="tea icon">
                             </span> Tea
                         </button>
-                        <button class="catalog-coffee__filter-btn" type="button">
-                            <span class="catalog-coffee__filter-icon"> <img src="./images/catalog-coffee-icon-3.png"
-                                    alt="desert icon">
+                        <button class="catalog-coffee__filter-btn" type="button" data-category="dessert">
+                            <span class="catalog-coffee__filter-icon">
+                                <img src="./images/catalog-coffee-icon-3.png" alt="dessert icon">
                             </span> Dessert
                         </button>
                     </div>
                 </div>
 
-                <div class="catalog-coffee__grid">
-                    <!-- Карточка 1: Irish coffee -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img class="product-card__image" src="./images/catalog-coffee-1.svg" alt="Irish coffee"
-                                width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Irish coffee</h2>
-                            <p class="product-card__desc">Fragrant black coffee with Jameson Irish whiskey and whipped
-                                milk
-                            </p>
-                            <span class="product-card__price">$7.00</span>
-                        </div>
-                    </article>
+                <!-- Сетка карточек заполняется скриптом -->
+                <div class="catalog-coffee__grid" id="catalogGrid"></div>
 
-                    <!-- Карточка 2: Kahlua coffee -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-2.svg" alt="Kahlua coffee" class="product-card__image"
-                                width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Kahlua coffee</h2>
-                            <p class="product-card__desc">Classic coffee with milk and Kahlua liqueur under a cap of
-                                frothied
-                                milk
-                            </p>
-                            <span class="product-card__price">$7.00</span>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 3: Honey raf -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-3.svg" alt="Honey raf" class="product-card__image"
-                                width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Honey raf</h2>
-                            <p class="product-card__desc">Espresso with frothied milk, cream and aromatic honey</p>
-                            <span class="product-card__price">$5.50</span>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 4: Ice cappuccino -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-4.svg" alt="Ice cappuccino" class="product-card__image"
-                                width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-
-                            <h2 class="product-card__title">Ice cappuccino</h2>
-                            <p class="product-card__desc">Cappuccino with soft thick foam in summer version with ice</p>
-                            <span class="product-card__price">$5.00</span>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 5: Espresso -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-5.svg" alt="Espresso" class="product-card__image"
-                                width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Espresso</h2>
-                            <p class="product-card__desc">Classic black coffee</p>
-                            <span class="product-card__price">$4.50</span>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 6: Latte -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-6.svg" alt="Latte" class="product-card__image" width="340"
-                                height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Latte</h2>
-                            <p class="product-card__desc">Espresso coffee with the addition of steamed milk and dense
-                                milk
-                            </p>
-                            <span class="product-card__price">$5.50</span>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 7: Latte macchiato -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-7.svg" alt="Latte macchiato" class="product-card__image"
-                                width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Latte macchiato</h2>
-                            <p class="product-card__desc">Espresso with frothied milk and chocolate</p>
-                            <span class="product-card__price">$5.50</span>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 8: Coffee with cognac -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-8.svg" alt="Coffee with cognac"
-                                class="product-card__image" width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Coffee with cognac</h2>
-                            <p class="product-card__desc">Fragrant black coffee with cognac and whipped cream</p>
-                            <span class="product-card__price">$6.50</span>
-                        </div>
-                    </article>
-
-                </div>
                 <div class="refresh-button-area">
-                    <button class="refresh-button">
+                    <button class="refresh-button" type="button">
                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M20.3883 12C19.6645 16.8113 15.513 20.5 10.5 20.5C4.97715 20.5 0.5 16.0228 0.5 10.5C0.5 4.97715 4.97715 0.5 10.5 0.5C14.6006 0.5 18.1248 2.96819 19.6679 6.5"
@@ -427,7 +317,9 @@
             </div>
         </dialog>
     </div>
-    <script src="./theme-toggle.js"></script>
+    <script src="./src/theme-toggle.js"></script>
+    <script src="./src/catalog-products.js"></script>
+    <script src="./src/catalog-category.js"></script>
 </body>
 
 </html>
