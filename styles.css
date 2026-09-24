@@ -503,14 +503,24 @@ html[data-theme="dark"] .logo__img--dark {
 }
 
 .mobile-overlay {
+    position: fixed;
+    top: 99px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100% - 100px);
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
     padding: 0;
     padding-top: 20px;
-    width: 100%;
-    height: 100%;
     border: none;
     background: var(--color-light-bg-page);
     color: var(--color-light-text-primary);
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-y: auto;
+    z-index: 100;
 }
 
 .mobile-overlay .header__inner {
@@ -555,14 +565,27 @@ html[data-theme="dark"] .logo__img--dark {
 }
 
 .mobile-overlay__close-button {
-    position: absolute;
-    right: 40px;
-    top: 26px;
-    padding: 15px;
-    border: none;
+    position: relative;
+    width: 44px;
+    aspect-ratio: 1;
+    border: 1px solid var(--color-light-border-primary);
+    border-radius: var(--border-radius-large);
+
     background-color: inherit;
     color: var(--color-light-text-primary);
     cursor: pointer;
+}
+
+.mobile-overlay__close-button svg {
+    position: absolute;
+    right: 14px;
+    top: 16px;
+}
+
+@media(width > 769px) {
+   .mobile-overlay__close-button {
+    display: none;
+   }
 }
 
 .mobile-overlay__body {
@@ -1508,7 +1531,7 @@ html[data-theme="dark"] .hero__btn-icon-img--dark {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top:40px;
+    margin-top: 40px;
 }
 
 .refresh-button {
@@ -1526,7 +1549,7 @@ html[data-theme="dark"] .hero__btn-icon-img--dark {
 }
 
 .refresh-button:hover svg {
-    color:var(--color-light-text-inverse);
+    color: var(--color-light-text-inverse);
 }
 
 .refresh-button svg {
@@ -1535,17 +1558,75 @@ html[data-theme="dark"] .hero__btn-icon-img--dark {
 }
 
 @media (width > 768px) {
-  .refresh-button {
-    display: none;
-  }
+    .refresh-button {
+        display: none;
+    }
 }
 
 @media (width < 769px) {
-  .product-card:nth-child(n+5) {
-    display: none;
-  }
+    .product-card:nth-child(n+5) {
+        display: none;
+    }
 
-  .refresh-button {
-    display: block;
-  }
+    .refresh-button {
+        display: block;
+    }
+}
+
+/* ===== Плавное открытие/закрытие мобильного меню ===== */
+.mobile-overlay {
+    /* Позиционирование уже задано у вас в CSS — оставляем как есть */
+    opacity: 0;
+    transform: translateY(-12px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        overlay 0.3s ease allow-discrete,
+        display 0.3s ease allow-discrete;
+}
+
+/* Когда dialog открыт — показываем */
+.mobile-overlay[open] {
+    opacity: 1;
+    transform: translateY(0);
+
+    /* Начальное состояние для анимации появления */
+    @starting-style {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+}
+
+/* ===== Плавная смена бургер ↔ крестик ===== */
+
+.mobile-overlay .mobile-overlay__close-button {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.8);
+    pointer-events: none;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.mobile-overlay[open] .mobile-overlay__close-button {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    pointer-events: auto;
+}
+
+.mobile-overlay[open] ~ * .header__burger-button,
+body:has(.mobile-overlay[open]) .header__burger-button {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.8);
+    pointer-events: none;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.header__burger-button {
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
