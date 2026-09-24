@@ -583,9 +583,9 @@ html[data-theme="dark"] .logo__img--dark {
 }
 
 @media(width > 769px) {
-   .mobile-overlay__close-button {
-    display: none;
-   }
+    .mobile-overlay__close-button {
+        display: none;
+    }
 }
 
 .mobile-overlay__body {
@@ -848,22 +848,17 @@ html[data-theme="dark"] .logo__img--dark {
 
 .slider__arrow {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 65.45px;
+    aspect-ratio: 1;
     border: 1px solid var(--color-light-border-inverse);
-    border-radius: 100px;
+    border-radius: 50%;
     background-color: transparent;
     color: var(--color-light-text-primary);
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.slider__arrow-left,
-.slider__arrow-right {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (hover: hover) {
@@ -1573,9 +1568,8 @@ html[data-theme="dark"] .hero__btn-icon-img--dark {
     }
 }
 
-/* ===== Плавное открытие/закрытие мобильного меню ===== */
+/* Модльное окно через Меню */
 .mobile-overlay {
-    /* Позиционирование уже задано у вас в CSS — оставляем как есть */
     opacity: 0;
     transform: translateY(-12px);
 
@@ -1586,19 +1580,15 @@ html[data-theme="dark"] .hero__btn-icon-img--dark {
         display 0.3s ease allow-discrete;
 }
 
-/* Когда dialog открыт — показываем */
 .mobile-overlay[open] {
     opacity: 1;
     transform: translateY(0);
 
-    /* Начальное состояние для анимации появления */
     @starting-style {
         opacity: 0;
         transform: translateY(-12px);
     }
 }
-
-/* ===== Плавная смена бургер ↔ крестик ===== */
 
 .mobile-overlay .mobile-overlay__close-button {
     opacity: 0;
@@ -1615,7 +1605,7 @@ html[data-theme="dark"] .hero__btn-icon-img--dark {
     pointer-events: auto;
 }
 
-.mobile-overlay[open] ~ * .header__burger-button,
+.mobile-overlay[open]~* .header__burger-button,
 body:has(.mobile-overlay[open]) .header__burger-button {
     opacity: 0;
     transform: rotate(90deg) scale(0.8);
@@ -1629,4 +1619,38 @@ body:has(.mobile-overlay[open]) .header__burger-button {
     transition:
         opacity 0.3s ease,
         transform 0.3s ease;
+}
+
+/* Слайдер */
+.slider__wrapper {
+    position: relative;
+    overflow: hidden;
+    --current: 0;
+    --gap: 40px;
+}
+
+.slider__card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    opacity: 0;
+    transform: translateX(calc((var(--i) - var(--current)) * 100%));
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.slider__card_active {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.slider__arrow {
+    position: relative;
+    z-index: 2;
 }
