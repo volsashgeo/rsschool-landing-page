@@ -14,7 +14,7 @@
         <!-- ХЕДЕР -->
         <header class="header ">
             <div class="header__inner">
-                <a class="logo" href="#" aria-label="Coffee House">
+                <a class="logo" aria-label="Coffee House">
                     <img class="logo__img logo__img--light" src="./images/logo.svg" alt="Coffee House Logo" width="100"
                         height="60" loading="lazy">
                     <img class="logo__img logo__img--dark" src="./images/logo-dark.svg" alt="Coffee House Logo"
@@ -65,7 +65,7 @@
                         </button>
                     </div>
 
-                    <button class="header__button button button--transparent hidden-tablet" type="button"
+                    <button class="header__button button hidden-tablet" type="button"
                         onclick="window.location.href='./catalog-coffee.html'">
                         Menu
                         <span class="header__button-icon" aria-hidden="true">
@@ -115,15 +115,15 @@
                             space
                             to
                             enjoy their favorite beverage.</p>
-                            <a class="hero__btn button" href="./catalog-coffee.html">
-                                <span class="hero__btn-title">Menu</span>
-                                <span class="hero__btn-icon" aria-hidden="true">
-                                    <img class="hero__btn-icon-img hero__btn-icon-img--light visible-hover"
-                                        src="./images/coffee-cup.svg" alt="" width="20" height="20">
-                                    <img class="hero__btn-icon-img hero__btn-icon-img--dark visible-hover"
-                                        src="./images/coffee-cup-dark.svg" alt="" width="20" height="20">
-                                </span>
-                            </a>
+                        <a class="hero__btn button" href="./catalog-coffee.html">
+                            <span class="hero__btn-title">Menu</span>
+                            <span class="hero__btn-icon" aria-hidden="true">
+                                <img class="hero__btn-icon-img hero__btn-icon-img--light visible-hover"
+                                    src="./images/coffee-cup.svg" alt="" width="20" height="20">
+                                <img class="hero__btn-icon-img hero__btn-icon-img--dark visible-hover"
+                                    src="./images/coffee-cup-dark.svg" alt="" width="20" height="20">
+                            </span>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -416,7 +416,13 @@
                     <li class="mobile-overlay__item">
                         <button class="header__button button overlay__button " type="button"
                             onclick="window.location.href='./catalog-coffee.html'">
-                            Menu <img src="./images/coffee-cup.svg" alt="coffee-cup" width="20" height="20">
+                            Menu
+                            <span class="header__button-icon header__button-icon__modal" aria-hidden="true">
+                                <img class="header__button-icon-img header__button-icon-img--light"
+                                    src="./images/coffee-cup.svg" alt="" width="40" height="40">
+                                <img class="header__button-icon-img header__button-icon-img--dark"
+                                    src="./images/coffee-cup-dark.svg" alt="" width="40" height="40">
+                            </span>
                         </button>
                     </li>
                 </ul>
