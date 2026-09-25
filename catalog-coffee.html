@@ -310,8 +310,41 @@
                 </div>
             </div>
         </footer>
+        <dialog class="mobile-overlay visible-tablet" id="mobileOverlay">
+            <form class="mobile-overlay__close-button-wrapper" id="mobile-overlay-form" method="dialog">
+            </form>
+            <div class="mobile-overlay__body">
+                <ul class="mobile-overlay__list">
+                    <li class="mobile-overlay__item">
+                        <a class="mobile-overlay__link" href="/">Favorite coffee</a>
+                    </li>
+                    <li class="mobile-overlay__item">
+                        <a class="mobile-overlay__link" href="/">About</a>
+                    </li>
+                    <li class="mobile-overlay__item">
+                        <a class="mobile-overlay__link" href="/">Mobile app</a>
+                    </li>
+                    <li class="mobile-overlay__item">
+                        <a class="mobile-overlay__link" href="/">Contact us</a>
+                    </li>
+                    <li class="mobile-overlay__item">
+                        <button class="header__button button overlay__button " type="button"
+                            onclick="window.location.href='./catalog-coffee.html'">
+                            Menu
+                            <span class="header__button-icon header__button-icon__modal" aria-hidden="true">
+                                <img class="header__button-icon-img header__button-icon-img--light"
+                                    src="./images/coffee-cup.svg" alt="" width="40" height="40">
+                                <img class="header__button-icon-img header__button-icon-img--dark"
+                                    src="./images/coffee-cup-dark.svg" alt="" width="40" height="40">
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </dialog>
     </div>
     <script src="./src/theme-toggle.js"></script>
+    <script src="./src/header-modal.js"></script>
     <script src="./src/catalog-products.js"></script>
     <script src="./src/catalog-category.js"></script>
     <script src="./src/catalog-modal.js"></script>
