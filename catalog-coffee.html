@@ -14,7 +14,7 @@
         <!-- ХЕДЕР -->
         <header class="header ">
             <div class="header__inner">
-                <a class="logo" href="index.html" aria-label="Coffee House">
+                <a class="logo" href="./index.html" aria-label="Coffee House">
                     <img class="logo__img logo__img--light" src="./images/logo.svg" alt="Coffee House Logo" width="100"
                         height="60" loading="lazy">
                     <img class="logo__img logo__img--dark" src="./images/logo-dark.svg" alt="Coffee House Logo"
@@ -24,16 +24,16 @@
                 <nav class="header__menu hidden-tablet">
                     <ul class="header__menu-list">
                         <li class="header__menu-item">
-                            <a class="header__menu-link" href="index.html#slider">Favorite coffee</a>
+                            <a class="header__menu-link" href="./index.html#slider">Favorite coffee</a>
                         </li>
                         <li class="header__menu-item">
-                            <a class="header__menu-link" href="index.html#about">About</a>
+                            <a class="header__menu-link" href="./index.html#about">About</a>
                         </li>
                         <li class="header__menu-item">
-                            <a class="header__menu-link" href="index.html#app">Mobile app</a>
+                            <a class="header__menu-link" href="./index.html#app">Mobile app</a>
                         </li>
                         <li class="header__menu-item">
-                            <a class="header__menu-link" href="index.html#contacts">Contact us</a>
+                            <a class="header__menu-link" href="./index.html#contacts">Contact us</a>
                         </li>
                     </ul>
                 </nav>
@@ -65,8 +65,8 @@
                         </button>
                     </div>
 
-                    <button class="header__button button button--transparent hidden-tablet" type="button"
-                        onclick="window.location.href='./catalog-coffee.html'">
+                    <button class=" button hidden-tablet catalog-header__button" type="button"
+                        onclick="window.location.href='./catalog-coffee.html'" disabled>
                         Menu
                         <span class="header__button-icon" aria-hidden="true">
                             <img class="header__button-icon-img header__button-icon-img--light"
@@ -77,7 +77,7 @@
                     </button>
 
                     <button class="header__burger-button burger-button visible-tablet" type="button"
-                        onclick="mobileOverlay.showModal()">
+                        onclick="mobileOverlay.show()">
                         <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.75 0.75H16.75" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round" />
@@ -86,12 +86,22 @@
                         </svg>
                         <span class="visually-hidden">Open navigation menu</span>
                     </button>
+                    <button class="mobile-overlay__close-button" type="submit" form="mobile-overlay-form" hidden>
+                        <span class="visually-hidden">Close navigation menu</span>
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.75 0.75L12.0637 12.0637" stroke="#E1D4C9" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M0.75 12.0637L12.0637 0.750013" stroke="#E1D4C9" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                    </button>
                 </div>
             </div>
 
         </header>
+        <!-- КАТАЛОГ -->
         <main>
-            <!-- КАТАЛОГ -->
             <section class="catalog-coffee">
                 <div class="catalog-coffee__nav">
                     <h1 class="catalog-coffee__title">
@@ -99,140 +109,29 @@
                     </h1>
 
                     <div class="catalog-coffee__filters">
-                        <button class="catalog-coffee__filter-btn catalog-coffee__filter-btn--active" type="button">
+                        <button class="catalog-coffee__filter-btn catalog-coffee__filter-btn--active" type="button"
+                            data-category="coffee">
                             <span class="catalog-coffee__filter-icon">
                                 <img src="./images/catalog-coffee-icon-1.png" alt="coffee icon">
                             </span> Coffee
                         </button>
-                        <button class="catalog-coffee__filter-btn" type="button">
+                        <button class="catalog-coffee__filter-btn" type="button" data-category="tea">
                             <span class="catalog-coffee__filter-icon">
                                 <img src="./images/catalog-coffee-icon-2.png" alt="tea icon">
                             </span> Tea
                         </button>
-                        <button class="catalog-coffee__filter-btn" type="button">
-                            <span class="catalog-coffee__filter-icon"> <img src="./images/catalog-coffee-icon-3.png"
-                                    alt="desert icon">
+                        <button class="catalog-coffee__filter-btn" type="button" data-category="dessert">
+                            <span class="catalog-coffee__filter-icon">
+                                <img src="./images/catalog-coffee-icon-3.png" alt="dessert icon">
                             </span> Dessert
                         </button>
                     </div>
                 </div>
 
-                <div class="catalog-coffee__grid">
-                    <!-- Карточка 1: Irish coffee -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img class="product-card__image" src="./images/catalog-coffee-1.svg" alt="Irish coffee"
-                                width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Irish coffee</h2>
-                            <p class="product-card__desc">Fragrant black coffee with Jameson Irish whiskey and whipped
-                                milk
-                            </p>
-                            <span class="product-card__price">$7.00</span>
-                        </div>
-                    </article>
+                <div class="catalog-coffee__grid" id="catalogGrid"></div>
 
-                    <!-- Карточка 2: Kahlua coffee -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-2.svg" alt="Kahlua coffee" class="product-card__image"
-                                width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Kahlua coffee</h2>
-                            <p class="product-card__desc">Classic coffee with milk and Kahlua liqueur under a cap of
-                                frothied
-                                milk
-                            </p>
-                            <span class="product-card__price">$7.00</span>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 3: Honey raf -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-3.svg" alt="Honey raf" class="product-card__image"
-                                width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Honey raf</h2>
-                            <p class="product-card__desc">Espresso with frothied milk, cream and aromatic honey</p>
-                            <span class="product-card__price">$5.50</span>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 4: Ice cappuccino -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-4.svg" alt="Ice cappuccino" class="product-card__image"
-                                width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-
-                            <h2 class="product-card__title">Ice cappuccino</h2>
-                            <p class="product-card__desc">Cappuccino with soft thick foam in summer version with ice</p>
-                            <span class="product-card__price">$5.00</span>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 5: Espresso -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-5.svg" alt="Espresso" class="product-card__image"
-                                width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Espresso</h2>
-                            <p class="product-card__desc">Classic black coffee</p>
-                            <span class="product-card__price">$4.50</span>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 6: Latte -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-6.svg" alt="Latte" class="product-card__image" width="340"
-                                height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Latte</h2>
-                            <p class="product-card__desc">Espresso coffee with the addition of steamed milk and dense
-                                milk
-                            </p>
-                            <span class="product-card__price">$5.50</span>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 7: Latte macchiato -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-7.svg" alt="Latte macchiato" class="product-card__image"
-                                width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Latte macchiato</h2>
-                            <p class="product-card__desc">Espresso with frothied milk and chocolate</p>
-                            <span class="product-card__price">$5.50</span>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 8: Coffee with cognac -->
-                    <article class="product-card">
-                        <div class="product-card__image-wrapper">
-                            <img src="./images/catalog-coffee-8.svg" alt="Coffee with cognac"
-                                class="product-card__image" width="340" height="340">
-                        </div>
-                        <div class="product-card__info-wrapper">
-                            <h2 class="product-card__title">Coffee with cognac</h2>
-                            <p class="product-card__desc">Fragrant black coffee with cognac and whipped cream</p>
-                            <span class="product-card__price">$6.50</span>
-                        </div>
-                    </article>
-
-                </div>
                 <div class="refresh-button-area">
-                    <button class="refresh-button">
+                    <button class="refresh-button" type="button">
                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M20.3883 12C19.6645 16.8113 15.513 20.5 10.5 20.5C4.97715 20.5 0.5 16.0228 0.5 10.5C0.5 4.97715 4.97715 0.5 10.5 0.5C14.6006 0.5 18.1248 2.96819 19.6679 6.5"
@@ -243,6 +142,63 @@
                     </button>
                 </div>
             </section>
+            <!-- МОДАЛЬНОЕ ОКНО -->
+            <div class="catalog-modal" id="catalogModal" hidden>
+                <div class="catalog-modal__overlay" data-modal-close></div>
+
+                <div class="catalog-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="catalogModalTitle">
+                    <div class="catalog-modal__image-wrapper">
+                        <img class="catalog-modal__image" src="" alt="" id="catalogModalImage" width="310" height="310">
+                    </div>
+
+                    <div class="catalog-modal__content">
+                        <div>
+                            <h2 class="catalog-modal__title" id="catalogModalTitle"></h2>
+                            <p class="catalog-modal__desc" id="catalogModalDesc"></p>
+                        </div>
+
+                        <div class="catalog-modal__group">
+                            <h3 class="catalog-modal__subtitle">Size</h3>
+                            <div class="catalog-modal__options" id="catalogModalSizes"></div>
+                        </div>
+
+                        <div class="catalog-modal__group">
+                            <h3 class="catalog-modal__subtitle">Additives</h3>
+                            <div class="catalog-modal__options" id="catalogModalAdditives"></div>
+                        </div>
+
+                        <div class="catalog-modal__total">
+                            <span class="catalog-modal__total-label">Total:</span>
+                            <span class="catalog-modal__total-price" id="catalogModalTotal"></span>
+                        </div>
+
+                        <p class="catalog-modal__note">
+                            <span class="catalog-modal__note-icon" aria-hidden="true"><svg width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_147811_7961)">
+                                        <path d="M8 7.66663V11" stroke="#403F3D" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M8 5.00667L8.00667 4.99926" stroke="#403F3D" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M7.99967 14.6667C11.6816 14.6667 14.6663 11.6819 14.6663 8.00004C14.6663 4.31814 11.6816 1.33337 7.99967 1.33337C4.31778 1.33337 1.33301 4.31814 1.33301 8.00004C1.33301 11.6819 4.31778 14.6667 7.99967 14.6667Z"
+                                            stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_147811_7961">
+                                            <rect width="16" height="16" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                            The cost is not final. Download our mobile app to see the final price and place your order.
+                            Earn loyalty points and enjoy your favorite coffee with up to 20% discount.
+                        </p>
+
+                        <button class="catalog-modal__close-btn" type="button" data-modal-close>Close</button>
+                    </div>
+                </div>
+            </div>
         </main>
         <!-- ФУТЕР -->
         <footer class="footer " id="contacts">
@@ -252,7 +208,7 @@
                     </h2>
                     <ul class="footer__socials-list">
                         <li class="footer__socials-item">
-                            <a href="#">
+                            <a href="https://x.com/?lang=ru">
                                 <svg width="24" height="24" viewBox="0 0 23 19" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -263,7 +219,7 @@
                             </a>
                         </li>
                         <li class="footer__socials-item">
-                            <a href="#">
+                            <a href="https://www.instagram.com/">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -279,7 +235,7 @@
                             </a>
                         </li>
                         <li class="footer__socials-item">
-                            <a href="#">
+                            <a href="https://www.facebook.com/?locale=ru_RU">
                                 <svg width="24" height="24" viewBox="0 0 12 21" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -355,79 +311,43 @@
             </div>
         </footer>
         <dialog class="mobile-overlay visible-tablet" id="mobileOverlay">
-            <div class=" header__inner">
-                <a class="logo" href="#" aria-label="Coffee House">
-                    <img class="logo__img logo__img--light" src="./images/logo.svg" alt="Coffee House Logo" width="100"
-                        height="60" loading="lazy">
-                    <img class="logo__img logo__img--dark" src="./images/logo-dark.svg" alt="Coffee House Logo"
-                        width="100" height="60" loading="lazy">
-                </a>
-                <div class="header__block">
-                    <div class="header__theme-toggle">
-                        <button class="header__theme-toggle__btn is-active" aria-label="Light theme">
-                            <span class="header__theme-toggle__light">
-                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M10 3V1C10 0.45 10.45 0 11 0C11.55 0 12 0.45 12 1V3C12 3.55 11.55 4 11 4C10.45 4 10 3.55 10 3ZM17.36 6.05L18.77 4.63C19.16 4.24 19.16 3.61 18.77 3.22C18.38 2.83 17.75 2.83 17.36 3.22L15.95 4.64C15.56 5.03 15.56 5.66 15.95 6.05C16.34 6.44 16.97 6.44 17.36 6.05ZM21 10H19C18.45 10 18 10.45 18 11C18 11.55 18.45 12 19 12H21C21.55 12 22 11.55 22 11C22 10.45 21.55 10 21 10ZM11 18C10.45 18 10 18.45 10 19V21C10 21.55 10.45 22 11 22C11.55 22 12 21.55 12 21V19C12 18.45 11.55 18 11 18ZM4.64 6.05L3.22 4.64C2.83 4.25 2.83 3.61 3.22 3.23C3.61 2.85 4.25 2.84 4.63 3.23L6.04 4.64C6.43 5.03 6.43 5.67 6.04 6.05C5.65 6.43 5.02 6.44 4.64 6.05ZM15.95 15.95C15.56 16.34 15.56 16.98 15.95 17.36L17.36 18.77C17.75 19.16 18.39 19.16 18.77 18.77C19.16 18.38 19.16 17.74 18.77 17.36L17.36 15.95C16.98 15.56 16.34 15.56 15.95 15.95ZM1 12H3C3.55 12 4 11.55 4 11C4 10.45 3.55 10 3 10H1C0.45 10 0 10.45 0 11C0 11.55 0.45 12 1 12ZM4.64 18.78L6.05 17.37C6.44 16.98 6.44 16.34 6.05 15.96C5.66 15.58 5.02 15.57 4.64 15.96L3.23 17.37C2.84 17.76 2.84 18.4 3.23 18.78C3.61 19.17 4.25 19.17 4.64 18.78ZM11 5C7.69 5 5 7.69 5 11C5 14.31 7.69 17 11 17C14.31 17 17 14.31 17 11C17 7.69 14.31 5 11 5Z"
-                                        fill="#E1D4C9" />
-                                </svg>
-                            </span>
-                        </button>
-                        <button class="header__theme-toggle__btn" aria-label="Dark theme">
-                            <span class="header__theme-toggle__dark">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M9 0C4.03 0 0 4.03 0 9C0 13.97 4.03 18 9 18C13.97 18 18 13.97 18 9C18 8.54 17.96 8.08 17.9 7.64C16.92 9.01 15.32 9.9 13.5 9.9C10.52 9.9 8.1 7.48 8.1 4.5C8.1 2.69 8.99 1.08 10.36 0.0999999C9.92 0.0399999 9.46 0 9 0Z"
-                                        fill="#403F3D" />
-                                </svg>
-                            </span>
-                        </button>
-                    </div>
-                    <button class="header__burger-button burger-button visible-tablet" type="button"
-                        onclick="mobileOverlay.showModal()">
-                        <span class="visually-hidden">Open navigation menu</span>
-                    </button>
-                </div>
-            </div>
-            <form class="mobile-overlay__close-button-wrapper" method="dialog">
-                <button class="mobile-overlay__close-button" type="submit">
-                    <span class="visually-hidden">Close navigation menu</span>
-                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.75 0.75L12.0637 12.0637" stroke="#E1D4C9" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M0.75 12.0637L12.0637 0.750013" stroke="#E1D4C9" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-
-                </button>
+            <form class="mobile-overlay__close-button-wrapper" id="mobile-overlay-form" method="dialog">
             </form>
             <div class="mobile-overlay__body">
                 <ul class="mobile-overlay__list">
                     <li class="mobile-overlay__item">
-                        <a class="mobile-overlay__link" href="/">Favorite coffee</a>
+                        <a class="mobile-overlay__link" href="./index.html#slider">Favorite coffee</a>
                     </li>
                     <li class="mobile-overlay__item">
-                        <a class="mobile-overlay__link" href="/">About</a>
+                        <a class="mobile-overlay__link" href="./index.html#about">About</a>
                     </li>
                     <li class="mobile-overlay__item">
-                        <a class="mobile-overlay__link" href="/">Mobile app</a>
+                        <a class="mobile-overlay__link" href="./index.html#app">Mobile app</a>
                     </li>
                     <li class="mobile-overlay__item">
-                        <a class="mobile-overlay__link" href="/">Contact us</a>
+                        <a class="mobile-overlay__link" href="./index.html#contacts">Contact us</a>
                     </li>
                     <li class="mobile-overlay__item">
                         <button class="header__button button overlay__button " type="button"
                             onclick="window.location.href='./catalog-coffee.html'">
-                            Menu <img src="./images/coffee-cup.svg" alt="coffee-cup" width="20" height="20">
+                            Menu
+                            <span class="header__button-icon header__button-icon__modal" aria-hidden="true">
+                                <img class="header__button-icon-img header__button-icon-img--light"
+                                    src="./images/coffee-cup.svg" alt="" width="40" height="40">
+                                <img class="header__button-icon-img header__button-icon-img--dark"
+                                    src="./images/coffee-cup-dark.svg" alt="" width="40" height="40">
+                            </span>
                         </button>
                     </li>
                 </ul>
             </div>
         </dialog>
     </div>
-    <script src="./theme-toggle.js"></script>
+    <script src="./src/theme-toggle.js"></script>
+    <script src="./src/header-modal.js"></script>
+    <script src="./src/catalog-products.js"></script>
+    <script src="./src/catalog-category.js"></script>
+    <script src="./src/catalog-modal.js"></script>
 </body>
 
 </html>
