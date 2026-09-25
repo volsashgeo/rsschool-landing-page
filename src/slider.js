@@ -14,14 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     const total = cards.length;
 
-    // Начальная установка позиций слайдов
     cards.forEach((card, index) => {
         card.style.setProperty('--i', index);
         card.classList.toggle('slider__card_active', index === currentIndex);
     });
 
     function updateSlider() {
-        // Плавное смещение всей ленты слайдов
         wrapper.style.setProperty('--current', currentIndex);
 
         cards.forEach((card, index) => {
