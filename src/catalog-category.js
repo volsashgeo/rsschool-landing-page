@@ -21,6 +21,7 @@ const imageSources = {
   "Black forest": "./images/catalog-dessert-8.svg",
 };
 
+let products;
 const grid = document.getElementById("catalogGrid");
 const filterButtons = document.querySelectorAll(".catalog-coffee__filter-btn");
 const refreshButton = document.querySelector(".refresh-button");
@@ -115,26 +116,33 @@ function setActiveCategory(category) {
   renderCategory(category, false);
 }
 
-setActiveCategory("coffee");
+async function loadProducts() {
+  const response = await fetch("./src/products.json");
+  products = await response.json();
 
-filterButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    setActiveCategory(btn.dataset.category);
+  setActiveCategory("coffee");
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setActiveCategory(btn.dataset.category);
+    });
   });
-});
 
-refreshButton.addEventListener("click", () => {
-  isExpanded = true;
-  renderCategory(currentCategory, true);
-});
+  refreshButton.addEventListener("click", () => {
+    isExpanded = true;
+    renderCategory(currentCategory, true);
+  });
 
-let resizeTimer;
-window.addEventListener("resize", () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    if (!isMobile()) {
-      isExpanded = false;
-    }
-    renderCategory(currentCategory, isExpanded);
-  }, 150);
-});
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (!isMobile()) {
+        isExpanded = false;
+      }
+      renderCategory(currentCategory, isExpanded);
+    }, 150);
+  });
+}
+
+loadProducts();
