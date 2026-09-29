@@ -25,3 +25,13 @@ overlayMenuButton.addEventListener("click", (event) => {
   window.location.href = "./catalog-coffee.html";
   mobileOverlay.close();
 });
+
+function checkWidth() {
+  if (window.innerWidth >= 769) {
+    closeButton.click();
+    mobileOverlay.close();
+  }
+}
+
+window.addEventListener('resize', checkWidth);
+window.addEventListener('DOMContentLoaded', checkWidth);
