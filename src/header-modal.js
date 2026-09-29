@@ -1,6 +1,7 @@
 const mobileOverlay = document.getElementById("mobileOverlay");
 const burgerButton = document.querySelector(".header__burger-button");
 const closeButton = document.querySelector(".mobile-overlay__close-button");
+const overlayMenuButton = document.querySelector(".overlay__button");
 
 burgerButton.addEventListener("click", () => {
   document.body.style.overflow = "hidden";
@@ -18,4 +19,9 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeButton.click();
   }
+});
+
+overlayMenuButton.addEventListener("click", (event) => {
+  window.location.href = "./catalog-coffee.html";
+  mobileOverlay.close();
 });
