@@ -86,7 +86,7 @@
                         </svg>
                         <span class="visually-hidden">Open navigation menu</span>
                     </button>
-                    <button class="mobile-overlay__close-button" type="submit" form="mobile-overlay-form" hidden>
+                    <button class="mobile-overlay__close-button" id="closeButton" type="submit" form="mobile-overlay-form" hidden>
                         <span class="visually-hidden">Close navigation menu</span>
                         <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.75 0.75L12.0637 12.0637" stroke="#E1D4C9" stroke-width="1.5"
@@ -408,16 +408,16 @@
             <div class="mobile-overlay__body">
                 <ul class="mobile-overlay__list">
                     <li class="mobile-overlay__item">
-                        <a class="mobile-overlay__link" href="./index.html#slider" onclick="mobileOverlay.close()">Favorite coffee</a>
+                        <a class="mobile-overlay__link" href="./index.html#slider" onclick="closeButton.click()">Favorite coffee</a>
                     </li>
                     <li class="mobile-overlay__item">
-                        <a class="mobile-overlay__link" href="./index.html#about" onclick="mobileOverlay.close()">About</a>
+                        <a class="mobile-overlay__link" href="./index.html#about" onclick="closeButton.click()">About</a>
                     </li>
                     <li class="mobile-overlay__item">
-                        <a class="mobile-overlay__link" href="./index.html#app" onclick="mobileOverlay.close()">Mobile app</a>
+                        <a class="mobile-overlay__link" href="./index.html#app" onclick="closeButton.click()">Mobile app</a>
                     </li>
                     <li class="mobile-overlay__item">
-                        <a class="mobile-overlay__link" href="./index.html#contacts" onclick="mobileOverlay.close()">Contact us</a>
+                        <a class="mobile-overlay__link" href="./index.html#contacts" onclick="closeButton.click()">Contact us</a>
                     </li>
                     <li class="mobile-overlay__item">
                         <button class="header__button button overlay__button " type="button"
