@@ -268,15 +268,15 @@ ul {
     overflow: hidden !important;
 }
 
-@media (max-width: 769px) {
+@media (width < 769px) {
     .hidden-tablet {
-        display: none !important;
+        display: none ;
     }
 }
 
-@media (min-width: 769px) {
+@media (width > 769px) {
     .visible-tablet {
-        display: none !important;
+        display: none ;
     }
 }
 
